@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta http-equiv=content-type content=text/html; charset=utf-8>
+        <meta name=viewport content=width=device-width, initial-scale=1.0 />
+        <script type=text/javascript src=https://www.baodongthap.vn/dongthap/js/jquery.min.js></script>
+        <script type=text/javascript src=https://www.baodongthap.vn/dongthap/js/video.js></script>
+        <link href=https://www.baodongthap.vn/dongthap/css/video-js.css rel=stylesheet type=text/css />
+        <style>
+                body {
+                        width: fit-content;
+                        margin: 0px;
+                        padding: 8px;
+                }
+
+                img {
+                        display: inline;
+                        max-width: 100%;
+                        height: auto
+                }
+        </style>
+        <script type=text/javascript>
+                var hasAudio = false;
+                $(document).ready(function () {
+                        $("img").each(function () {
+                                if ("imgvideo" == $(this).attr("class")) {
+                                        $(this).parent().addClass("pvideo"), $(this).parent().attr("style", "width: 375px;margin: auto;");
+                                        var t = $(this).attr("alt").replace("http://baodongthap.com.vn", "https://www.baodongthap.vn");
+                                        $(this).parent().html("<video id='my_video_1' class='video-js vjs-default-skin' controls preload='auto' width='375' height='auto' data-setup='{}' poster='" + t.replace(".mp4", ".jpg") + "' >'<source src='" + t + "' type='video/mp4' /> </video>")
+                                } else if ($(this).attr("class") == "imgmp3") {
+                                        if(hasAudio) { 
+                                                $(this).remove();
+                                                $(".cls").remove();
+                                        } else {
+                                                hasAudio = true;
+                                                $(this).parent().addClass("divBaoNoi");
+                                                var src = $(this).attr("alt").replace("http://baodongthap.com.vn", "https://www.baodongthap.vn");
+                                                $(this).parent().html("<audio  src='" + src + "' controls='controls' preload='auto' > </audio>");
+                                        }
+                                }
+                        })
+                });
+        </script>
+</head>
+
+<body>
+        <p style="text-align:justify"><img alt="http://baodongthap.com.vn/database/video/20220818122426Ngayhoi.mp4"
+                        class="imgvideo"
+                        src="https://baodongthap.vnhttp://baodongthap.com.vn/database/video/imagesv.jpg"
+                        style="width: 100%;height: auto;" /></p>
+
+        <p style="text-align:justify">&nbsp;</p>
+
+        <p style="text-align:justify">ĐTO - S&aacute;ng ng&agrave;y 18/8, Hội đồng bảo vệ an ninh trật tự Phường 11, TP
+                Cao L&atilde;nh tổ chức &ldquo;Ng&agrave;y hội to&agrave;n d&acirc;n bảo vệ an ninh Tổ quốc&rdquo; năm
+                2022 (19/8/2005 - 19/8/2022). Ủy vi&ecirc;n Ban chấp h&agrave;nh Trung ương Đảng, B&iacute; thư Tỉnh ủy
+                L&ecirc; Quốc Phong đ&atilde; đến dự.</p>
+
+        <p style="text-align:center"><strong><em><img alt=""
+                                        src="https://baodongthap.vn/database/image/2022/08/18/PHONG%201.jpg" /><br />
+                                B&iacute; thư Tỉnh ủy L&ecirc; Quốc Phong tặng qu&agrave; lưu niệm cho đại diện Đảng ủy,
+                                UBND Phường 11</em></strong></p>
+
+        <p style="text-align:justify">&ldquo;Ng&agrave;y hội to&agrave;n d&acirc;n bảo vệ an ninh Tổ quốc&rdquo; năm
+                2022 của Phường 11 gắn với nhiều hoạt động như: giao lưu văn h&oacute;a, văn nghệ; tổ chức c&aacute;c
+                tr&ograve; chơi d&acirc;n gian; tổ chức thăm hỏi, tặng qu&agrave; gia đ&igrave;nh ch&iacute;nh
+                s&aacute;ch, người c&oacute; c&ocirc;ng, học sinh ngh&egrave;o. &Ocirc;ng Huỳnh L&ecirc; Minh - Chủ tịch
+                UBND Phường 11 cho biết, hiện nay, tr&ecirc;n địa b&agrave;n phường duy tr&igrave; hoạt động 9 m&ocirc;
+                h&igrave;nh đảm bảo an ninh trật tự như: Cảnh s&aacute;t khu vực xuống địa b&agrave;n bằng xe đạp;
+                X&acirc;y dựng mới m&ocirc; h&igrave;nh giải quyết m&acirc;u thuẫn nội bộ nh&acirc;n d&acirc;n; Tuần tra
+                chia nhỏ địa b&agrave;n đảm bảo an ninh trật tự kh&oacute;m&hellip;</p>
+
+        <p style="text-align:center"><strong><em><img alt=""
+                                        src="https://baodongthap.vn/database/image/2022/08/18/PHONG%203.jpg" /><br />
+                                UBND Phường 11 tặng qu&agrave; cho học sinh c&oacute; ho&agrave;n cảnh kh&oacute;
+                                khăn</em></strong></p>
+
+        <p style="text-align:center"><strong><em><img alt=""
+                                        src="https://baodongthap.vn/database/image/2022/08/18/PHONG%202.jpg"
+                                        style="width: 100%;height: auto;" /></em></strong><br />
+                <strong><em>Tổ chức c&aacute;c tr&ograve; chơi d&acirc;n gian tại Ng&agrave;y hội to&agrave;n d&acirc;n
+                                bảo vệ an ninh Tổ quốc của Phường 11</em></strong>
+        </p>
+
+        <p style="text-align:justify">Trong 8 th&aacute;ng đầu năm 2022, lực lượng c&ocirc;ng an phường chủ động phối
+                hợp với c&aacute;c lực lượng qu&acirc;n sự, bảo vệ d&acirc;n phố, d&acirc;n ph&ograve;ng tổ chức được
+                240 lượt ca tuần tra. Qua đ&oacute;, bắt quả tang c&aacute;c đối tượng đ&aacute;nh bạc tr&aacute;i
+                ph&eacute;p, giải t&aacute;n 47 tụ điểm đ&aacute;nh bạc nhỏ lẻ; ngăn chặn 10 vụ c&oacute; h&agrave;nh vi
+                bạo lực gia đ&igrave;nh; giải t&aacute;n 52 nh&oacute;m thanh thiếu ni&ecirc;n tụ tập đ&ecirc;m khuya,
+                uống rượu, bia nơi c&ocirc;ng cộng g&acirc;y mất an ninh trật tự.</p>
+
+        <p style="text-align:justify">Đến dự ng&agrave;y hội, B&iacute; thư Tỉnh ủy L&ecirc; Quốc Phong đ&atilde; trao
+                qu&agrave; lưu niệm cho đại diện Đảng ủy, UBND phường 11 v&agrave; TP Cao L&atilde;nh. Tại ng&agrave;y
+                hội, UBND Phường 11 đ&atilde; tặng nhiều phần qu&agrave; cho hộ ngh&egrave;o, học sinh c&oacute;
+                ho&agrave;n cảnh kh&oacute; khăn. Dịp n&agrave;y, UBND tỉnh, TP Cao L&atilde;nh, Phường 11 đ&atilde;
+                tặng Bằng khen, Giấy khen cho 2 tập thể, 11 c&aacute; nh&acirc;n c&oacute; th&agrave;nh t&iacute;ch xuất
+                sắc trong phong tr&agrave;o &ldquo;To&agrave;n d&acirc;n bảo vệ an ninh tổ quốc&rdquo;.</p>
+
+        <p style="text-align:right"><strong>DƯƠNG &Uacute;T</strong></p>
+</body>
+
+</html>
