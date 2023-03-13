@@ -4,9 +4,12 @@
 <head>
         <meta http-equiv=content-type content=text/html; charset=utf-8>
         <meta name=viewport content=width=device-width, initial-scale=1.0 />
+        <link href=https://www.baodongthap.vn/dongthap/css/video-js.css rel=stylesheet type=text/css />
+        <link href=http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css rel=stylesheet
+                type=text/css />
         <script type=text/javascript src=https://www.baodongthap.vn/dongthap/js/jquery.min.js></script>
         <script type=text/javascript src=https://www.baodongthap.vn/dongthap/js/video.js></script>
-        <link href=https://www.baodongthap.vn/dongthap/css/video-js.css rel=stylesheet type=text/css />
+        <script type=text/javascript src=https://www.baodongthap.vn/audiojs/audio.min.js?v=2></script>
         <style>
                 body {
                         width: fit-content;
@@ -17,31 +20,70 @@
                 img {
                         display: inline;
                         max-width: 100%;
-                        height: auto
+                        height: auto;
+                }
+
+                audio {
+                        display: none;
+                }
+
+                .divBaoNoi {
+                        margin-bottom: 10px;
+                }
+
+                .divBaoNoi .audiojs {
+                        float: left;
+                        background: #1a7900;
+                        height: 40px;
+                }
+
+                .divBaoNoi .audiojs .loaded {
+                        background: #fff;
+                        background-image: none;
+                }
+
+                .divBaoNoi .audiojs .progress {
+                        background: #000;
+                        background-image: none;
+                        border-radius: 0;
+                }
+
+                .divBaoNoi .audiojs .play-pause {
+                        border-right: 0;
+                        width: 35px;
+                }
+
+                .divBaoNoi .audiojs .loading,
+                .divBaoNoi .audiojs .pause,
+                .divBaoNoi .audiojs .play {
+                        background: 0;
+                        color: #fff;
+                        text-align: center;
+                        font-size: 20px;
+                        padding-top: 6px;
+                        padding-left: 8px;
+                }
+
+                .divBaoNoi .audiojs .scrubber {
+                        height: 10px;
+                        border-top: 0;
+                        margin: 0;
+                        margin-top: 15px;
+                        width: calc(100% - 145px);
+                }
+
+                .divBaoNoi .audiojs .time {
+                        height: 40px;
+                        line-height: 40px;
+                        border-left: 0;
+                        margin-left: 8px;
+                        padding: 0 6px 0 0;
+                }
+
+                .hide {
+                        display: none;
                 }
         </style>
-        <script type=text/javascript>
-                var hasAudio = false;
-                $(document).ready(function () {
-                        $("img").each(function () {
-                                if ("imgvideo" == $(this).attr("class")) {
-                                        $(this).parent().addClass("pvideo"), $(this).parent().attr("style", "width: 375px;margin: auto;");
-                                        var t = $(this).attr("alt").replace("http://baodongthap.com.vn", "https://www.baodongthap.vn");
-                                        $(this).parent().html("<video id='my_video_1' class='video-js vjs-default-skin' controls preload='auto' width='375' height='auto' data-setup='{}' poster='" + t.replace(".mp4", ".jpg") + "' >'<source src='" + t + "' type='video/mp4' /> </video>")
-                                } else if ($(this).attr("class") == "imgmp3") {
-                                        if(hasAudio) { 
-                                                $(this).remove();
-                                                $(".cls").remove();
-                                        } else {
-                                                hasAudio = true;
-                                                $(this).parent().addClass("divBaoNoi");
-                                                var src = $(this).attr("alt").replace("http://baodongthap.com.vn", "https://www.baodongthap.vn");
-                                                $(this).parent().html("<audio  src='" + src + "' controls='controls' preload='auto' > </audio>");
-                                        }
-                                }
-                        })
-                });
-        </script>
 </head>
 
 <body>
@@ -98,6 +140,32 @@
                 sắc trong phong tr&agrave;o &ldquo;To&agrave;n d&acirc;n bảo vệ an ninh tổ quốc&rdquo;.</p>
 
         <p style="text-align:right"><strong>DƯƠNG &Uacute;T</strong></p>
+
+        <script type=text/javascript>
+                var hasAudio = false;
+                $("img").each(function () {
+                        if ("imgvideo" == $(this).attr("class")) {
+                                $(this).parent().addClass("pvideo"), $(this).parent().attr("style", "width: 375px;margin: auto;");
+                                var t = $(this).attr("alt").replace("http://baodongthap.com.vn", "https://www.baodongthap.vn");
+                                $(this).parent().html("<video id='my_video_1' class='video-js vjs-default-skin' controls preload='auto' width='375' height='auto' data-setup='{}' poster='" + t.replace(".mp4", ".jpg") + "' >'<source src='" + t + "' type='video/mp4' /> </video>")
+                        } else if ($(this).attr("class") == "imgmp3") {
+                                if(hasAudio) {
+                                        var src = $(this).attr("alt").replace("http://baodongthap.com.vn", "https://www.baodongthap.vn");
+                                        $("audio").attr("src", src);
+                                        $(this).addClass("hide");
+                                        $(".cls").addClass("hide");
+                                } else {
+                                        hasAudio = true;
+                                        $(this).parent().addClass("divBaoNoi");
+                                        var src = $(this).attr("alt").replace("http://baodongthap.com.vn", "https://www.baodongthap.vn");
+                                        $(this).parent().html("<audio  src='" + src + "' controls='controls' preload='auto' > </audio>");
+                                }
+                        }
+                });
+                var audios; 
+                audiojs.events.ready(function () { audios = audiojs.createAll() });
+                function pauseMedia() { audios.forEach(function (a) { a.pause() }) }
+        </script>
 </body>
 
 </html>
